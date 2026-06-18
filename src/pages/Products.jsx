@@ -19,33 +19,31 @@ const Products = () => {
     urlCategory || null
   );
 
-  const img =
-    "https://yoursuittrend.com/wp-content/uploads/turtle-neck-with-suit-12.jpg";
-
   // ================= PRODUCTS =================
   const products = [
-    { id: 1, name: "Savile Row Suit", category: "suits", sub: "formal", color: "black", price: "$499", image: img },
-    { id: 2, name: "Navy Royal Suit", category: "suits", sub: "formal", color: "navy", price: "$699", image: img },
-    { id: 3, name: "Black Tuxedo", category: "suits", sub: "tuxedo", color: "black", price: "$899", image: img },
+    { id: 1, name: "Savile Row Suit", category: "suits", sub: "formal", color: "black", price: "$499", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPgdPz_9BMhMWMxAAWvvLfu5Cwwk9nZeiSzWdg1dd_ljXmysmBZlEacg23&s=10" },
+    { id: 2, name: "Midnight Tailored", category: "suits", sub: "formal", color: "navy", price: "$699", image: "https://novosuit.com/cdn/shop/files/1735219568652_1.jpg?crop=center&height=1000&v=1752585388&width=1000" },
+    { id: 3, name: "Black Tuxedo", category: "suits", sub: "tuxedo", color: "black", price: "$899", image: "https://i.etsystatic.com/19822878/r/il/023665/5062578974/il_fullxfull.5062578974_19pd.jpg" },
 
-    { id: 4, name: "Oxford Shoes", category: "shoes", sub: "oxford", color: "brown", price: "$399", image: img },
-    { id: 5, name: "Chelsea Boots", category: "shoes", sub: "boots", color: "black", price: "$459", image: img },
+    { id: 4, name: "Oxford Shoes", category: "shoes", sub: "oxford", color: "brown", price: "$399", image: "https://img.tatacliq.com/images/i21//437Wx649H/MP000000024646675_437Wx649H_202412070212291.jpeg" },
+    { id: 5, name: "Chelsea Boots", category: "shoes", sub: "boots", color: "black", price: "$459", image: "https://www.rajsinghs.com/cdn/shop/files/IMG_20240422_122940_387.jpg?v=1713769954&width=2048" },
 
-    { id: 6, name: "Gold Chronograph", category: "watches", sub: "chrono", color: "gold", price: "$999", image: img },
-    { id: 7, name: "Skeleton Watch", category: "watches", sub: "skeleton", color: "silver", price: "$1299", image: img },
+    { id: 6, name: "Gold Chronograph", category: "watches", sub: "chrono", color: "gold", price: "$999", image: "https://www.sonatawatches.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw19dc3a83/images/Sonata/Catalog/77187KM06_1.jpg?sw=600&sh=600" },
+    { id: 7, name: "Titan Edge", category: "watches", sub: "slim", color: "black", price: "$1299", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6rPNu8k3qehwtPuEzVBXs4F8UdR-SDmPCbsNYmOm6wTOaj_fU1Z7NdDo&s=10" },
 
-    { id: 8, name: "Royal Oud", category: "perfumes", sub: "oud", color: "amber", price: "$249", image: img },
-    { id: 9, name: "White Musk", category: "perfumes", sub: "musk", color: "white", price: "$199", image: img },
+    { id: 8, name: " Tom Ford Oud Wood", category: "perfumes", sub: "oud", color: "amber", price: "$249", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAg-ifuRHyBSh1nop7UNl2bTn0WjSzsQe1b_6A15jameMBRg8cp2zqIqE&s=10" },
+    { id: 9, name: "Creed Aventus", category: "perfumes", sub: "fruity", color: "white", price: "$199", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBcF3Z_bRywFMLjwGeL1zdgBO0o_nQI98nwZxbDw4TgVl6CSD5APSqp00&s=10" },
 
-    { id: 10, name: "Cashmere Coat", category: "old-money", sub: "coat", color: "beige", price: "$899", image: img },
+    { id: 10, name: "Cashmere Coat", category: "old-money", sub: "coat", color: "beige", price: "$899", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8DaMIOZBpwJVCi_z9NVosQoE8J11CChdSBDYjIr6HET_HVo0u08nr7fM&s=10" },
+    { id: 11, name: "Ivory Sweater", category: "old-money", sub: "coat", color: "white", price: "$399", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTVh0MGZNime48PSsl2eiK1l30MaH5qTo1nBfBmTrCqOWXtYUshu14jbl2&s=10" },
   ];
 
   // ================= SUBCATEGORIES =================
   const subMap = {
     suits: ["all", "formal", "tuxedo"],
     shoes: ["all", "oxford", "boots"],
-    watches: ["all", "chrono", "skeleton"],
-    perfumes: ["all", "oud", "musk"],
+    watches: ["all", "chrono", "slim"],
+    perfumes: ["all", "oud", "fruity"],
     "old-money": ["all", "coat"],
   };
 

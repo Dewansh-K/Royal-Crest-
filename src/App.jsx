@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
@@ -11,7 +11,26 @@ import Signup from './pages/Signup'
 import Products from './pages/Products'
 import { CartProvider } from './context/CartContext'
 
+// Forces scroll to top whenever the route path changes.
+// Plain window.scrollTo isn't reliable here because Lenis intercepts
+// and smooths scroll — it has to be told directly via lenis.scrollTo.
+const ScrollToTop = ({ lenisRef }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
+
+  return null;
+};
+
 const App = () => {
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.4,        // higher = slower scroll. default is ~1.2
@@ -21,6 +40,8 @@ const App = () => {
       touchMultiplier: 1.2,
     });
 
+    lenisRef.current = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -29,12 +50,14 @@ const App = () => {
 
     return () => {
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
   return (
     <CartProvider>
       <Navbar />
+      <ScrollToTop lenisRef={lenisRef} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
