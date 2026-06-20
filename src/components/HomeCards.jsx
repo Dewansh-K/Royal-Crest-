@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const HomeCards = ({ cards = [] }) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div className="w-full flex justify-center">
@@ -35,12 +37,13 @@ const HomeCards = ({ cards = [] }) => {
             {/* HOVER OVERLAY WITH BUTTONS */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 rounded-xl">
 
-              {/* Learn More */}
-              <button className="bg-white text-black px-5 py-2 text-sm tracking-wide hover:bg-gray-200 transition">
+              <button
+                onClick={() => navigate(`/product/${card.id}`)}
+                className="bg-white text-black px-5 py-2 text-sm tracking-wide hover:bg-gray-200 transition"
+              >
                 Learn More
               </button>
 
-              {/* Add to Cart */}
               <button
                 onClick={() => addToCart(card)}
                 className="bg-[#C8A24A] text-black px-5 py-2 text-sm tracking-wide hover:opacity-90 transition"

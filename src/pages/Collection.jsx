@@ -15,28 +15,28 @@ const Collection = () => {
       name: "Old Money",
       desc: "Quiet luxury essentials",
       image:
-        "https://yoursuittrend.com/wp-content/uploads/turtle-neck-with-suit-12.jpg",
+        "https://dappermix.com/wp-content/uploads/2024/05/old-money-outift.webp",
       key: "old-money",
     },
     {
       name: "Shoes",
       desc: "Crafted leather perfection",
       image:
-        "https://yoursuittrend.com/wp-content/uploads/turtle-neck-with-suit-12.jpg",
+        "https://img.freepik.com/free-photo/men-s-fashion-wallpaper-wooden-background-leather-shoes-with-polishing-tools_53876-145655.jpg?semt=ais_hybrid&w=740&q=80",
       key: "shoes",
     },
     {
       name: "Watches",
       desc: "Mechanical heritage timepieces",
       image:
-        "https://yoursuittrend.com/wp-content/uploads/turtle-neck-with-suit-12.jpg",
+        "https://thumbs.dreamstime.com/b/elegant-antique-pocket-watch-detailed-closeup-mechanical-gears-gold-chain-set-against-dark-moody-background-under-dramatic-417854343.jpg",
       key: "watches",
     },
     {
       name: "Perfumes",
       desc: "Signature identity in scent",
       image:
-        "https://yoursuittrend.com/wp-content/uploads/turtle-neck-with-suit-12.jpg",
+        "https://t4.ftcdn.net/jpg/08/29/29/91/360_F_829299141_MzGh1zwQ496ggSsJgGDl6kYC2Jo9Vs2e.jpg",
       key: "perfumes",
     },
   ];

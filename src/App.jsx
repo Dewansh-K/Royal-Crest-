@@ -9,14 +9,11 @@ import Cart from './pages/Cart'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Products from './pages/Products'
+import LearnMore from './pages/LearnMore'
 import { CartProvider } from './context/CartContext'
 
-// Forces scroll to top whenever the route path changes.
-// Plain window.scrollTo isn't reliable here because Lenis intercepts
-// and smooths scroll — it has to be told directly via lenis.scrollTo.
 const ScrollToTop = ({ lenisRef }) => {
   const location = useLocation();
-
   useEffect(() => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
@@ -24,7 +21,6 @@ const ScrollToTop = ({ lenisRef }) => {
       window.scrollTo(0, 0);
     }
   }, [location.pathname]);
-
   return null;
 };
 
@@ -33,10 +29,10 @@ const App = () => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4,        // higher = slower scroll. default is ~1.2
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      wheelMultiplier: 0.8, // lower = slower per scroll tick
+      wheelMultiplier: 0.8,
       touchMultiplier: 1.2,
     });
 
@@ -65,6 +61,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<LearnMore />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </CartProvider>
